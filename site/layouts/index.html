@@ -2,7 +2,9 @@
 
 {{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
 
-{{ partial "short-text" .Params.blurb}}
+{{ with .Site.GetPage "/about_us" }}
+    {{ partial "short-text" . }}
+{{ end }}
 
 {{ partial "2-up" .Params }}
 
